@@ -45573,7 +45573,12 @@ main.home .user {
   margin-top: -56px;
 }
 main.home .user > div {
-    margin-top: calc(56px / 2);
+    margin-top: 56px;
+}
+@media (min-width: 576px) {
+main.home .user > div {
+        margin-top: 28px;
+}
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
