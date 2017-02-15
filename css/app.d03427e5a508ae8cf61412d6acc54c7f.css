@@ -15138,28 +15138,29 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 header {
   background: rgba(255, 255, 255, 0.9);
+  background: rgba(51, 37, 50, 0.9);
   transition: background 300ms ease-out;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   overflow-y: hidden;
 }
-header:hover {
-    background: white;
-    transition: background 200ms ease-in;
-}
 header nav {
     flex-align: flex-start;
 }
 header h1 {
     padding-left: 15px;
+    color: white;
+}
+header h1:hover {
+      color: white;
 }
 header a {
-    color: black;
     transition: color 200ms ease-out;
+    color: rgba(255, 255, 255, 0.7);
 }
 header a:hover {
-      color: #332532;
+      color: white;
       transition: color 100ms ease-in;
 }
 /*!
@@ -22744,14 +22745,14 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     -ms-flex: 0 1 auto;
         flex: 0 1 auto;
     cursor: pointer;
-    color: black;
+    color: rgba(255, 255, 255, 0.7);
     background: transparent;
     border: 0;
     padding: .5em .5rem;
     font-size: .75rem;
 }
 .switcher button:hover {
-      color: #332532;
+      color: white;
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -45568,6 +45569,11 @@ main.home .user {
   background-color: #332532;
   position: relative;
   color: white;
+  height: 456px;
+  margin-top: -56px;
+}
+main.home .user > div {
+    margin-top: calc(56px / 2);
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
