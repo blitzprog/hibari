@@ -15137,13 +15137,18 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 }
 header {
-  background: rgba(255, 255, 255, 0.9);
-  background: rgba(51, 37, 50, 0.9);
-  transition: background 300ms ease-out;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  background: rgba(51, 37, 50, 0.95);
+  transition: background 400ms ease-out;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   overflow-y: hidden;
+}
+header.transparent {
+    background: transparent;
+    transition: background 400ms ease-in-out;
+}
+header.transparent:hover {
+      background: rgba(51, 37, 50, 0.95);
+      transition: background 300ms ease-in-out;
 }
 header nav {
     flex-align: flex-start;
@@ -53152,12 +53157,15 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 main.user section.content .cover {
   margin-top: -56px;
-  width: 100vw;
   height: 400px;
   background-color: #332532;
   background-size: cover;
   background-position: center;
   position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
 }
 main.user section.content .cover:before {
     content: '';
@@ -53168,13 +53176,13 @@ main.user section.content .cover:before {
     left: 0;
     background: rgba(0, 0, 0, 0.5);
 }
+main.user section.content .cover div {
+    padding-bottom: 30px;
+    padding-left: 0;
+}
 main.user section.content .cover img {
-    left: calc((100vw - 10rem) / 2);
     border-radius: 999rem;
-    width: 10rem;
-    top: calc(50% - 56px);
-    position: absolute;
-    display: block;
+    width: 100px;
     z-index: 501;
     pointer-events: none;
 }
