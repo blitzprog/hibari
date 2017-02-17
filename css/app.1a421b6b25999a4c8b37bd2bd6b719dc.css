@@ -53805,7 +53805,7 @@ h6, .h6 {
   font-weight: 300;
   line-height: 1.1;
 }
-.display-4, section.profile h1, section.profile .waifu {
+.display-4 {
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.1;
@@ -60933,11 +60933,6 @@ section.profile .card {
 section.profile .card p:first-of-type {
       font-size: 2rem;
       margin-bottom: 0;
-}
-section.profile h1 span, section.profile .waifu span {
-    display: block;
-    padding-top: .5rem;
-    font-size: 1.5rem;
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
