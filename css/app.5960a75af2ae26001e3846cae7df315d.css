@@ -7552,10 +7552,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     display: none !important;
 }
 }
-.os {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-}
 #app {
   display: -ms-flexbox;
   display: flex;
@@ -7568,6 +7564,37 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 #app main {
     -ms-flex: 3;
         flex: 3;
+}
+.os {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+.title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.title span {
+    position: relative;
+    display: inline-block;
+}
+.title span:before, .title span:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 100vw;
+      height: 1px;
+      background: rgba(51, 37, 50, 0.1);
+}
+.title span:before {
+      right: 100%;
+      margin-right: 1rem;
+}
+.title span:after {
+      left: 100%;
+      margin-left: 1rem;
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -60875,33 +60902,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .hidden-print {
     display: none !important;
 }
-}
-.title {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-align: center;
-  margin-bottom: 15px;
-}
-.title span {
-    position: relative;
-    display: inline-block;
-}
-.title span:before, .title span:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 100vw;
-      height: 1px;
-      background: rgba(51, 37, 50, 0.1);
-}
-.title span:before {
-      right: 100%;
-      margin-right: 1rem;
-}
-.title span:after {
-      left: 100%;
-      margin-left: 1rem;
 }
 section.profile {
   padding: 0;
