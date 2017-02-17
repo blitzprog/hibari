@@ -7552,6 +7552,10 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     display: none !important;
 }
 }
+.os {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
 #app {
   display: -ms-flexbox;
   display: flex;
@@ -54025,7 +54029,7 @@ pre code {
       padding-left: 15px;
 }
 }
-.row, section.profile > div:first-of-type {
+.row, section.profile > div:first-of-type, section.profile .sociability {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -54034,25 +54038,25 @@ pre code {
   margin-left: -15px;
 }
 @media (min-width: 576px) {
-.row, section.profile > div:first-of-type {
+.row, section.profile > div:first-of-type, section.profile .sociability {
       margin-right: -15px;
       margin-left: -15px;
 }
 }
 @media (min-width: 768px) {
-.row, section.profile > div:first-of-type {
+.row, section.profile > div:first-of-type, section.profile .sociability {
       margin-right: -15px;
       margin-left: -15px;
 }
 }
 @media (min-width: 992px) {
-.row, section.profile > div:first-of-type {
+.row, section.profile > div:first-of-type, section.profile .sociability {
       margin-right: -15px;
       margin-left: -15px;
 }
 }
 @media (min-width: 1200px) {
-.row, section.profile > div:first-of-type {
+.row, section.profile > div:first-of-type, section.profile .sociability {
       margin-right: -15px;
       margin-left: -15px;
 }
@@ -56845,19 +56849,19 @@ tbody.collapse.show {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
-.card-block {
+.card-block, section.profile .card {
   -ms-flex: 1 1 auto;
       flex: 1 1 auto;
   padding: 1.25rem;
 }
-.card-title {
+.card-title, section.profile .card p:first-of-type {
   margin-bottom: 0.75rem;
 }
 .card-subtitle {
   margin-top: -0.375rem;
   margin-bottom: 0;
 }
-.card-text:last-child {
+.card-text:last-child, section.profile .card p:last-child:last-of-type {
   margin-bottom: 0;
 }
 .card-link:hover {
@@ -56976,11 +56980,15 @@ tbody.collapse.show {
 .card-inverse .card-header,
   .card-inverse .card-footer,
   .card-inverse .card-title,
+  .card-inverse section.profile .card p:first-of-type, section.profile .card
+  .card-inverse p:first-of-type,
   .card-inverse .card-blockquote {
     color: #fff;
 }
 .card-inverse .card-link,
   .card-inverse .card-text,
+  .card-inverse section.profile .card p:last-of-type, section.profile .card
+  .card-inverse p:last-of-type,
   .card-inverse .card-subtitle,
   .card-inverse .card-blockquote .blockquote-footer {
     color: rgba(255, 255, 255, 0.65);
@@ -60868,14 +60876,38 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     display: none !important;
 }
 }
-section.profile {
-  margin-top: 1rem;
+.title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 15px;
 }
-section.profile .left {
-    background: blue;
+.title span {
+    position: relative;
+    display: inline-block;
+}
+.title span:before, .title span:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 100vw;
+      height: 1px;
+      background: rgba(51, 37, 50, 0.1);
+}
+.title span:before {
+      right: 100%;
+      margin-right: 1rem;
+}
+.title span:after {
+      left: 100%;
+      margin-left: 1rem;
+}
+section.profile {
+  padding: 0;
+  margin-top: 15px;
 }
 section.profile .right {
-    background: red;
     -ms-flex-order: -1;
         order: -1;
 }
@@ -60884,6 +60916,23 @@ section.profile .right {
         -ms-flex-order: 1;
             order: 1;
 }
+}
+section.profile .sociability {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+}
+section.profile .card {
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    margin: 0 15px 30px;
+    min-width: 10rem;
+}
+section.profile .card p:first-of-type {
+      font-size: 2rem;
+      margin-bottom: 0;
 }
 section.profile h1 span, section.profile .waifu span {
     display: block;
