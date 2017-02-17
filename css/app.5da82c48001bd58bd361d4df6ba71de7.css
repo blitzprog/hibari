@@ -7553,14 +7553,13 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 }
 #app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-top: calc(56px);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   min-height: 100vh;
+  font-family: 'Asap', sans-serif;
+  background: #fafafa;
 }
 #app main {
     -ms-flex: 3;
@@ -15137,9 +15136,8 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 }
 header {
-  background: rgba(51, 37, 50, 0.95);
+  background: #332532;
   transition: background 400ms ease-out;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   overflow-y: hidden;
 }
 header.transparent {
@@ -45546,7 +45544,6 @@ main.home section {
   border-radius: 0;
   height: 400px;
   margin-bottom: 0;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 main.home section input {
     background: rgba(255, 255, 255, 0.1);
@@ -45557,7 +45554,6 @@ main.home section input {
 main.home section input::-webkit-input-placeholder {
       color: rgba(255, 255, 255, 0.4);
       font-weight: 300;
-      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 main.home section a {
     margin-top: 1rem;
@@ -45575,7 +45571,6 @@ main.home .user {
   position: relative;
   color: white;
   height: 400px;
-  margin-top: -56px;
 }
 main.home .user > div {
     margin-top: 56px;
@@ -47523,15 +47518,18 @@ select.form-control:focus::-ms-value {
 }
 .form-control-static.form-control-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-static.btn, .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control,
+  .input-group-sm > .input-group-btn > .form-control-static.btn, main.user section.content .cover
+  .input-group-sm > .input-group-btn > a.form-control-static, .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control,
   .input-group-lg > .form-control-static.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-static.btn {
+  .input-group-lg > .input-group-btn > .form-control-static.btn, main.user section.content .cover
+  .input-group-lg > .input-group-btn > a.form-control-static {
     padding-right: 0;
     padding-left: 0;
 }
 .form-control-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-btn > .btn, main.user section.content .cover
+.input-group-sm > .input-group-btn > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -47543,7 +47541,8 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 }
 .form-control-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
+.input-group-lg > .input-group-btn > .btn, main.user section.content .cover
+.input-group-lg > .input-group-btn > a {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
@@ -47742,7 +47741,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
       top: 0;
 }
 }
-.btn {
+.btn, main.user section.content .cover a {
   display: inline-block;
   font-weight: normal;
   line-height: 1.25;
@@ -47759,22 +47758,24 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   border-radius: 0.25rem;
   transition: all 0.2s ease-in-out;
 }
-.btn:focus, .btn:hover {
+.btn:focus, main.user section.content .cover a:focus, .btn:hover, main.user section.content .cover a:hover {
     text-decoration: none;
 }
-.btn:focus, .btn.focus {
+.btn:focus, main.user section.content .cover a:focus, .btn.focus, main.user section.content .cover a.focus {
     outline: 0;
     box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
 }
-.btn.disabled, .btn:disabled {
+.btn.disabled, main.user section.content .cover a.disabled, .btn:disabled, main.user section.content .cover a:disabled {
     cursor: not-allowed;
     opacity: .65;
 }
-.btn:active, .btn.active {
+.btn:active, main.user section.content .cover a:active, .btn.active, main.user section.content .cover a.active {
     background-image: none;
 }
-a.btn.disabled,
-fieldset[disabled] a.btn {
+a.btn.disabled, main.user section.content .cover a.disabled,
+fieldset[disabled] a.btn,
+fieldset[disabled] main.user section.content .cover a, main.user section.content .cover
+fieldset[disabled] a {
   pointer-events: none;
 }
 .btn-primary {
@@ -48090,12 +48091,12 @@ fieldset[disabled] a.btn {
 .btn-link:disabled:focus, .btn-link:disabled:hover {
       text-decoration: none;
 }
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, main.user section.content .cover .btn-group-lg > a {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, main.user section.content .cover .btn-group-sm > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -48253,29 +48254,48 @@ tbody.collapse.show {
   display: inline-flex;
   vertical-align: middle;
 }
-.btn-group > .btn,
-  .btn-group-vertical > .btn {
+.btn-group > .btn, main.user section.content .cover .btn-group > a,
+  .btn-group-vertical > .btn, main.user section.content .cover
+  .btn-group-vertical > a {
     position: relative;
     -ms-flex: 0 1 auto;
         flex: 0 1 auto;
 }
-.btn-group > .btn:hover,
-    .btn-group-vertical > .btn:hover {
+.btn-group > .btn:hover, main.user section.content .cover .btn-group > a:hover,
+    .btn-group-vertical > .btn:hover, main.user section.content .cover
+    .btn-group-vertical > a:hover {
       z-index: 2;
 }
-.btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
-    .btn-group-vertical > .btn:focus,
-    .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+.btn-group > .btn:focus, main.user section.content .cover .btn-group > a:focus, .btn-group > .btn:active, main.user section.content .cover .btn-group > a:active, .btn-group > .btn.active, main.user section.content .cover .btn-group > a.active,
+    .btn-group-vertical > .btn:focus, main.user section.content .cover
+    .btn-group-vertical > a:focus,
+    .btn-group-vertical > .btn:active, main.user section.content .cover
+    .btn-group-vertical > a:active,
+    .btn-group-vertical > .btn.active, main.user section.content .cover
+    .btn-group-vertical > a.active {
       z-index: 2;
 }
-.btn-group .btn + .btn,
+.btn-group .btn + .btn, .btn-group main.user section.content .cover a + .btn, main.user section.content .cover .btn-group a + .btn, .btn-group main.user section.content .cover .btn + a, main.user section.content .cover .btn-group .btn + a, .btn-group main.user section.content .cover a + a, main.user section.content .cover .btn-group a + a,
   .btn-group .btn + .btn-group,
+  .btn-group main.user section.content .cover a + .btn-group, main.user section.content .cover
+  .btn-group a + .btn-group,
   .btn-group .btn-group + .btn,
+  .btn-group main.user section.content .cover .btn-group + a, main.user section.content .cover
+  .btn-group .btn-group + a,
   .btn-group .btn-group + .btn-group,
   .btn-group-vertical .btn + .btn,
+  .btn-group-vertical main.user section.content .cover a + .btn, main.user section.content .cover
+  .btn-group-vertical a + .btn,
+  .btn-group-vertical main.user section.content .cover .btn + a, main.user section.content .cover
+  .btn-group-vertical .btn + a,
+  .btn-group-vertical main.user section.content .cover a + a, main.user section.content .cover
+  .btn-group-vertical a + a,
   .btn-group-vertical .btn + .btn-group,
+  .btn-group-vertical main.user section.content .cover a + .btn-group, main.user section.content .cover
+  .btn-group-vertical a + .btn-group,
   .btn-group-vertical .btn-group + .btn,
+  .btn-group-vertical main.user section.content .cover .btn-group + a, main.user section.content .cover
+  .btn-group-vertical .btn-group + a,
   .btn-group-vertical .btn-group + .btn-group {
     margin-left: -1px;
 }
@@ -48288,17 +48308,17 @@ tbody.collapse.show {
 .btn-toolbar .input-group {
     width: auto;
 }
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), main.user section.content .cover .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, main.user section.content .cover .btn-group > a:first-child {
   margin-left: 0;
 }
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), main.user section.content .cover .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
-.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), main.user section.content .cover .btn-group > a:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -48306,15 +48326,15 @@ tbody.collapse.show {
 .btn-group > .btn-group {
   float: left;
 }
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, main.user section.content .cover .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0;
 }
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, main.user section.content .cover .btn-group > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, main.user section.content .cover .btn-group > .btn-group:last-child:not(:first-child) > a:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -48322,18 +48342,18 @@ tbody.collapse.show {
 .btn-group.open .dropdown-toggle {
   outline: 0;
 }
-.btn + .dropdown-toggle-split {
+.btn + .dropdown-toggle-split, main.user section.content .cover a + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
-.btn + .dropdown-toggle-split::after {
+.btn + .dropdown-toggle-split::after, main.user section.content .cover a + .dropdown-toggle-split::after {
     margin-left: 0;
 }
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, main.user section.content .cover .btn-group-sm > a + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, main.user section.content .cover .btn-group-lg > a + .dropdown-toggle-split {
   padding-right: 1.125rem;
   padding-left: 1.125rem;
 }
@@ -48347,44 +48367,49 @@ tbody.collapse.show {
   -ms-flex-pack: center;
       justify-content: center;
 }
-.btn-group-vertical .btn,
+.btn-group-vertical .btn, .btn-group-vertical main.user section.content .cover a, main.user section.content .cover .btn-group-vertical a,
   .btn-group-vertical .btn-group {
     width: 100%;
 }
-.btn-group-vertical > .btn + .btn,
-  .btn-group-vertical > .btn + .btn-group,
-  .btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > .btn + .btn, main.user section.content .cover .btn-group-vertical > a + .btn, main.user section.content .cover .btn-group-vertical > .btn + a, main.user section.content .cover .btn-group-vertical > a + a,
+  .btn-group-vertical > .btn + .btn-group, main.user section.content .cover
+  .btn-group-vertical > a + .btn-group,
+  .btn-group-vertical > .btn-group + .btn, main.user section.content .cover
+  .btn-group-vertical > .btn-group + a,
   .btn-group-vertical > .btn-group + .btn-group {
     margin-top: -1px;
     margin-left: 0;
 }
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), main.user section.content .cover .btn-group-vertical > a:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-.btn-group-vertical > .btn:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), main.user section.content .cover .btn-group-vertical > a:first-child:not(:last-child) {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), main.user section.content .cover .btn-group-vertical > a:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, main.user section.content .cover .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0;
 }
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, main.user section.content .cover .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, main.user section.content .cover .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+[data-toggle="buttons"] > .btn input[type="radio"], main.user section.content .cover [data-toggle="buttons"] > a input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"], main.user section.content .cover
+[data-toggle="buttons"] > a input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"], main.user section.content .cover
+[data-toggle="buttons"] > .btn-group > a input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], main.user section.content .cover
+[data-toggle="buttons"] > .btn-group > a input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
@@ -48440,14 +48465,16 @@ tbody.collapse.show {
 }
 .input-group-addon.form-control-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn, main.user section.content .cover
+  .input-group-sm > .input-group-btn > a.input-group-addon {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
     border-radius: 0.2rem;
 }
 .input-group-addon.form-control-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn, main.user section.content .cover
+  .input-group-lg > .input-group-btn > a.input-group-addon {
     padding: 0.75rem 1.5rem;
     font-size: 1.25rem;
     border-radius: 0.3rem;
@@ -48458,11 +48485,15 @@ tbody.collapse.show {
 }
 .input-group .form-control:not(:last-child),
 .input-group-addon:not(:last-child),
-.input-group-btn:not(:last-child) > .btn,
-.input-group-btn:not(:last-child) > .btn-group > .btn,
+.input-group-btn:not(:last-child) > .btn, main.user section.content .cover
+.input-group-btn:not(:last-child) > a,
+.input-group-btn:not(:last-child) > .btn-group > .btn, main.user section.content .cover
+.input-group-btn:not(:last-child) > .btn-group > a,
 .input-group-btn:not(:last-child) > .dropdown-toggle,
-.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle), main.user section.content .cover
+.input-group-btn:not(:first-child) > a:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn, main.user section.content .cover
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > a {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -48471,11 +48502,15 @@ tbody.collapse.show {
 }
 .input-group .form-control:not(:first-child),
 .input-group-addon:not(:first-child),
-.input-group-btn:not(:first-child) > .btn,
-.input-group-btn:not(:first-child) > .btn-group > .btn,
+.input-group-btn:not(:first-child) > .btn, main.user section.content .cover
+.input-group-btn:not(:first-child) > a,
+.input-group-btn:not(:first-child) > .btn-group > .btn, main.user section.content .cover
+.input-group-btn:not(:first-child) > .btn-group > a,
 .input-group-btn:not(:first-child) > .dropdown-toggle,
-.input-group-btn:not(:last-child) > .btn:not(:first-child),
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+.input-group-btn:not(:last-child) > .btn:not(:first-child), main.user section.content .cover
+.input-group-btn:not(:last-child) > a:not(:first-child),
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn, main.user section.content .cover
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > a {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -48487,27 +48522,27 @@ tbody.collapse.show {
   font-size: 0;
   white-space: nowrap;
 }
-.input-group-btn > .btn {
+.input-group-btn > .btn, main.user section.content .cover .input-group-btn > a {
     position: relative;
     -ms-flex: 1;
         flex: 1;
 }
-.input-group-btn > .btn + .btn {
+.input-group-btn > .btn + .btn, main.user section.content .cover .input-group-btn > a + .btn, main.user section.content .cover .input-group-btn > .btn + a, main.user section.content .cover .input-group-btn > a + a {
       margin-left: -1px;
 }
-.input-group-btn > .btn:focus, .input-group-btn > .btn:active, .input-group-btn > .btn:hover {
+.input-group-btn > .btn:focus, main.user section.content .cover .input-group-btn > a:focus, .input-group-btn > .btn:active, main.user section.content .cover .input-group-btn > a:active, .input-group-btn > .btn:hover, main.user section.content .cover .input-group-btn > a:hover {
       z-index: 3;
 }
-.input-group-btn:not(:last-child) > .btn,
+.input-group-btn:not(:last-child) > .btn, main.user section.content .cover .input-group-btn:not(:last-child) > a,
   .input-group-btn:not(:last-child) > .btn-group {
     margin-right: -1px;
 }
-.input-group-btn:not(:first-child) > .btn,
+.input-group-btn:not(:first-child) > .btn, main.user section.content .cover .input-group-btn:not(:first-child) > a,
   .input-group-btn:not(:first-child) > .btn-group {
     z-index: 2;
     margin-left: -1px;
 }
-.input-group-btn:not(:first-child) > .btn:focus, .input-group-btn:not(:first-child) > .btn:active, .input-group-btn:not(:first-child) > .btn:hover,
+.input-group-btn:not(:first-child) > .btn:focus, main.user section.content .cover .input-group-btn:not(:first-child) > a:focus, .input-group-btn:not(:first-child) > .btn:active, main.user section.content .cover .input-group-btn:not(:first-child) > a:active, .input-group-btn:not(:first-child) > .btn:hover, main.user section.content .cover .input-group-btn:not(:first-child) > a:hover,
     .input-group-btn:not(:first-child) > .btn-group:focus,
     .input-group-btn:not(:first-child) > .btn-group:active,
     .input-group-btn:not(:first-child) > .btn-group:hover {
@@ -49492,7 +49527,7 @@ tbody.collapse.show {
 .badge:empty {
     display: none;
 }
-.btn .badge {
+.btn .badge, main.user section.content .cover a .badge {
   position: relative;
   top: -1px;
 }
@@ -53156,7 +53191,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 }
 main.user section.content .cover {
-  margin-top: -56px;
   height: 400px;
   background-color: #332532;
   background-size: cover;
@@ -53176,41 +53210,82 @@ main.user section.content .cover:before {
     left: 0;
     background: rgba(0, 0, 0, 0.5);
 }
-main.user section.content .cover div {
+main.user section.content .cover > div {
     padding-bottom: 30px;
     padding-left: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex-align: end;
+        align-items: flex-end;
+}
+main.user section.content .cover > div div {
+      padding-left: 1px;
 }
 main.user section.content .cover img {
     border-radius: 999rem;
     width: 100px;
     z-index: 501;
     pointer-events: none;
+    margin-right: 24px;
+}
+main.user section.content .cover h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    padding-bottom: 1px;
+}
+main.user section.content .cover h2 span {
+      background: #F75239;
+      border-radius: 3px;
+      text-transform: uppercase;
+      font-size: 13px;
+      padding: 3px 10px;
+      position: relative;
+      left: 8px;
+      top: -4px;
+      font-weight: 400;
+      line-height: 1;
+}
+main.user section.content .cover a {
+    font-size: 12px;
+    padding: 8px 40px;
+    margin-bottom: 10px;
+    background: #E75E45;
+    color: white;
+    line-height: 1.25;
 }
 main.user section.content nav {
-  background: rgba(247, 247, 247, 0.8);
+  background: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0;
   width: 100vw;
   position: -webkit-sticky;
   position: sticky;
   top: 56px;
-  height: 46px;
   z-index: 100;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
   transition: background 300ms ease-out;
 }
-main.user section.content nav:hover {
-    background: #f7f7f7;
-    transition: background 200ms ease-in;
-}
 main.user section.content nav a {
-    color: black;
-    transition: color 200ms ease-out;
-    padding: 0.16em 1em;
+    color: rgba(0, 0, 0, 0.3);
+    transition: color 100ms ease-out;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-left: 1px solid #eee;
 }
-main.user section.content nav a:hover {
+main.user section.content nav a.router-link-active {
       color: #332532;
-      transition: color 100ms ease-out;
+}
+main.user section.content nav a:last-of-type {
+      border-right: 1px solid #eee;
+}
+main.user section.content nav a:hover:not(.router-link-active) {
+      color: rgba(51, 37, 50, 0.8);
+      background: #fafafa;
+      transition: color 100ms ease-in-out;
 }
 main.user section.content .content {
   margin-top: 1rem;
@@ -53986,12 +54061,12 @@ pre code {
   margin-right: 0;
   margin-left: 0;
 }
-.no-gutters > .col, section.profile .no-gutters > .left, section.profile .no-gutters > .right,
+.no-gutters > .col,
   .no-gutters > [class*="col-"] {
     padding-right: 0;
     padding-left: 0;
 }
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, section.profile .left, section.profile .right, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, section.profile .left, section.profile .right, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -53999,30 +54074,30 @@ pre code {
   padding-left: 15px;
 }
 @media (min-width: 576px) {
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, section.profile .left, section.profile .right, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, section.profile .left, section.profile .right, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 15px;
       padding-left: 15px;
 }
 }
 @media (min-width: 768px) {
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, section.profile .left, section.profile .right, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, section.profile .left, section.profile .right, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 15px;
       padding-left: 15px;
 }
 }
 @media (min-width: 992px) {
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, section.profile .left, section.profile .right, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, section.profile .left, section.profile .right, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 15px;
       padding-left: 15px;
 }
 }
 @media (min-width: 1200px) {
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, section.profile .left, section.profile .right, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, section.profile .left, section.profile .right, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 15px;
       padding-left: 15px;
 }
 }
-.col, section.profile .left, section.profile .right {
+.col {
   -ms-flex-preferred-size: 0;
       flex-basis: 0;
   -ms-flex-positive: 1;
@@ -54273,7 +54348,7 @@ pre code {
         flex: 0 0 91.66667%;
     max-width: 91.66667%;
 }
-.col-sm-12 {
+.col-sm-12, section.profile .left, section.profile .right {
     -ms-flex: 0 0 100%;
         flex: 0 0 100%;
     max-width: 100%;
@@ -54421,7 +54496,7 @@ pre code {
         flex: 0 0 25%;
     max-width: 25%;
 }
-.col-md-4 {
+.col-md-4, section.profile .right {
     -ms-flex: 0 0 33.33333%;
         flex: 0 0 33.33333%;
     max-width: 33.33333%;
@@ -54441,7 +54516,7 @@ pre code {
         flex: 0 0 58.33333%;
     max-width: 58.33333%;
 }
-.col-md-8 {
+.col-md-8, section.profile .left {
     -ms-flex: 0 0 66.66667%;
         flex: 0 0 66.66667%;
     max-width: 66.66667%;
@@ -60796,9 +60871,18 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 section.profile {
   margin-top: 1rem;
 }
+section.profile .left {
+    background: blue;
+}
+section.profile .right {
+    background: red;
+    -ms-flex-order: -1;
+        order: -1;
+}
 @media (min-width: 768px) {
 section.profile .right {
-      text-align: right;
+        -ms-flex-order: 1;
+            order: 1;
 }
 }
 section.profile h1 span, section.profile .waifu span {
@@ -75931,7 +76015,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 }
 main.anime section.content .cover {
-  margin-top: -56px;
   width: 100vw;
   height: 400px;
   background-color: #332532;
@@ -83546,7 +83629,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 }
 main.manga section.content .cover {
-  margin-top: -56px;
   width: 100vw;
   height: 400px;
   background-color: #332532;
