@@ -7559,7 +7559,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
       flex-direction: column;
   min-height: 100vh;
   font-family: 'Asap', sans-serif;
-  background: #fafafa;
+  background: #eceeef;
 }
 #app main {
     -ms-flex: 3;
@@ -30343,11 +30343,18 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 }
 section.notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border-radius: 0;
   margin-bottom: 0;
-  background: #fafafa;
+  background: #e0e0e0;
   border: 0;
   z-index: 1;
+  height: 6rem;
+  max-height: 6rem;
+  overflow: hidden;
 }
 section.notice > div {
     display: -ms-flexbox;
@@ -30360,8 +30367,9 @@ section.notice > div {
         justify-content: space-between;
     -ms-flex-line-pack: stretch;
         align-content: stretch;
-    -ms-flex-align: start;
-        align-items: flex-start;
+    -ms-flex-align: center;
+        align-items: center;
+    height: 100%;
 }
 section.notice > div div {
       -ms-flex-order: 0;
@@ -30389,7 +30397,7 @@ section.notice button {
     padding-left: 15px;
 }
 section.notice button span {
-      color: #cccccc;
+      color: rgba(0, 0, 0, 0.8);
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -37960,6 +37968,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .hidden-print {
     display: none !important;
 }
+}
+#app > footer:nth-child(4) {
+  margin-bottom: 6rem;
 }
 footer {
   height: 54px;
