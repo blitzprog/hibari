@@ -60950,6 +60950,28 @@ section.profile .card p:first-of-type {
       font-size: 2rem;
       margin-bottom: 0;
 }
+section.profile .favourites a {
+    font-size: 12px;
+}
+section.profile .favourites .row, section.profile .favourites section.profile > div:first-of-type, section.profile .favourites .sociability {
+    margin: 15px -2px 0;
+}
+section.profile .favourites .row > div, section.profile .favourites section.profile > div:first-of-type > div, section.profile .favourites .sociability > div {
+      padding: 0 3px;
+}
+section.profile .favourites .row a, section.profile .favourites section.profile > div:first-of-type a, section.profile .favourites .sociability a {
+      border-radius: 3px;
+      overflow: hidden;
+      display: inline-block;
+}
+section.profile .favourites img {
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+}
+section.profile .favourites ul .active {
+    background: #332532;
+}
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
