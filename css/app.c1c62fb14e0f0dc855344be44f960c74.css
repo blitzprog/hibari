@@ -60972,6 +60972,20 @@ section.profile .favourites img {
 section.profile .favourites ul .active {
     background: #332532;
 }
+section.profile .recent-activity {
+    margin-bottom: 30px;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+section.profile .recent-activity div {
+      padding: 0 7.5px;
+}
+section.profile .recent-activity img {
+      width: 100%;
+      max-width: 100%;
+      vertical-align: middle;
+      border-radius: 3px;
+}
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
