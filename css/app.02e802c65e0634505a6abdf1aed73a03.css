@@ -7559,7 +7559,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
       flex-direction: column;
   min-height: 100vh;
   font-family: 'Asap', sans-serif;
-  background: #eceeef;
+  background: #FAFAFA;
 }
 #app main {
     -ms-flex: 3;
@@ -7575,6 +7575,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   white-space: nowrap;
   text-align: center;
   margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #464646;
 }
 .title span {
     position: relative;
@@ -7586,7 +7589,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
       top: 50%;
       width: 100vw;
       height: 1px;
-      background: rgba(51, 37, 50, 0.1);
+      background: #ebebeb;
 }
 .title span:before {
       right: 100%;
@@ -15184,17 +15187,17 @@ header nav {
 }
 header h1 {
     padding-left: 15px;
-    color: white;
+    color: #FAFAFA;
 }
 header h1:hover {
-      color: white;
+      color: #FAFAFA;
 }
 header a {
     transition: color 200ms ease-out;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(250, 250, 250, 0.7);
 }
 header a:hover {
-      color: white;
+      color: #FAFAFA;
       transition: color 100ms ease-in;
 }
 /*!
@@ -22779,14 +22782,14 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     -ms-flex: 0 1 auto;
         flex: 0 1 auto;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(250, 250, 250, 0.7);
     background: transparent;
     border: 0;
     padding: .5em .5rem;
     font-size: .75rem;
 }
 .switcher button:hover {
-      color: white;
+      color: #FAFAFA;
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -30349,7 +30352,8 @@ section.notice {
   right: 0;
   border-radius: 0;
   margin-bottom: 0;
-  background: #e0e0e0;
+  background: #ebebeb;
+  color: #464646;
   border: 0;
   z-index: 1;
   height: 6rem;
@@ -30382,7 +30386,7 @@ section.notice > div div {
       text-align: center;
 }
 section.notice a {
-    color: #332532;
+    color: #E75E45;
 }
 section.notice button {
     -ms-flex-order: 1;
@@ -30397,7 +30401,7 @@ section.notice button {
     padding-left: 15px;
 }
 section.notice button span {
-      color: rgba(0, 0, 0, 0.8);
+      color: #464646;
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -37974,12 +37978,12 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 footer {
   height: 54px;
-  background: rgba(0, 0, 0, 0.05);
+  background: #ebebeb;
   margin-top: 1rem;
 }
 footer a {
     cursor: pointer;
-    color: black;
+    color: #464646;
 }
 footer a:hover {
       color: #332532;
@@ -45586,32 +45590,33 @@ main.home section {
   border-radius: 0;
   height: 400px;
   margin-bottom: 0;
+  background: #f2f2f2;
 }
 main.home section input {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: rgba(250, 250, 250, 0.1);
+    color: #FAFAFA;
     border-radius: 0;
     border-color: transparent;
 }
 main.home section input::-webkit-input-placeholder {
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(250, 250, 250, 0.4);
       font-weight: 300;
 }
 main.home section a {
     margin-top: 1rem;
     border-radius: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    border: 1px solid rgba(250, 250, 250, 0.1);
+    color: #FAFAFA;
     font-weight: 300;
 }
 main.home section a:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(250, 250, 250, 0.1);
       border-color: transparent;
 }
 main.home .user {
   background-color: #332532;
   position: relative;
-  color: white;
+  color: #FAFAFA;
   height: 400px;
 }
 main.home .user > div {
@@ -53275,13 +53280,13 @@ main.user section.content .cover img {
     margin-right: 24px;
 }
 main.user section.content .cover h2 {
-    color: white;
+    color: #FAFAFA;
     font-weight: 500;
     font-size: 30px;
     padding-bottom: 1px;
 }
 main.user section.content .cover h2 span {
-      background: #F75239;
+      background: #E75E45;
       border-radius: 3px;
       text-transform: uppercase;
       font-size: 13px;
@@ -53297,12 +53302,12 @@ main.user section.content .cover a {
     padding: 8px 40px;
     margin-bottom: 10px;
     background: #E75E45;
-    color: white;
+    color: #FAFAFA;
     line-height: 1.25;
 }
 main.user section.content nav {
-  background: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: #FFF;
+  border-bottom: 1px solid #ebebeb;
   padding: 0;
   width: 100vw;
   position: -webkit-sticky;
@@ -53316,17 +53321,17 @@ main.user section.content nav a {
     transition: color 100ms ease-out;
     padding: 10px 20px;
     font-size: 14px;
-    border-left: 1px solid #eee;
+    border-left: 1px solid #ebebeb;
 }
 main.user section.content nav a.router-link-active {
       color: #332532;
 }
 main.user section.content nav a:last-of-type {
-      border-right: 1px solid #eee;
+      border-right: 1px solid #ebebeb;
 }
 main.user section.content nav a:hover:not(.router-link-active) {
       color: rgba(51, 37, 50, 0.8);
-      background: #fafafa;
+      background: #FAFAFA;
       transition: color 100ms ease-in-out;
 }
 main.user section.content .content {
@@ -53354,7 +53359,7 @@ main.user section.content .content span {
 }
 .loader svg path,
   .loader svg rect {
-    fill: #000;
+    fill: #464646;
 }
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -60916,7 +60921,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 section.profile {
   padding: 0;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 section.profile .right {
     -ms-flex-order: -1;
@@ -60936,8 +60941,8 @@ section.profile .sociability {
 }
 section.profile .card {
     text-align: center;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.09);
+    box-shadow: 0 1px 4px rgba(70, 70, 70, 0.04);
+    border: 1px solid rgba(70, 70, 70, 0.09);
     margin: 0 15px 30px;
     min-width: 10rem;
 }
