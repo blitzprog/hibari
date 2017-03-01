@@ -60970,7 +60970,16 @@ section.profile .favourites img {
     vertical-align: middle;
 }
 section.profile .favourites ul .active {
+    color: #FAFAFA;
     background: #332532;
+}
+section.profile .favourites ul a:not(.active) {
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+}
+section.profile .favourites ul a:not(.active):hover {
+      color: #E75E45;
+      transition: color 100ms ease-in-out;
 }
 section.profile .recent-activity {
     margin-bottom: 30px;
