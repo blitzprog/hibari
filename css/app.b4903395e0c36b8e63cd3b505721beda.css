@@ -60969,17 +60969,26 @@ section.profile .favourites img {
     max-width: 100%;
     vertical-align: middle;
 }
+section.profile .favourites ul {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 98px;
+    z-index: 1;
+    background: rgba(250, 250, 250, 0.96);
+    margin: -15px 0;
+    padding: 15px 0;
+}
 section.profile .favourites ul .active {
-    color: #FAFAFA;
-    background: #332532;
+      color: #FAFAFA;
+      background: #332532;
 }
 section.profile .favourites ul a:not(.active) {
-    cursor: pointer;
-    transition: color 200ms ease-in-out;
+      cursor: pointer;
+      transition: color 200ms ease-in-out;
 }
 section.profile .favourites ul a:not(.active):hover {
-      color: #E75E45;
-      transition: color 100ms ease-in-out;
+        color: #E75E45;
+        transition: color 100ms ease-in-out;
 }
 section.profile .recent-activity {
     margin-bottom: 30px;
