@@ -1,17 +1,12 @@
 {
-  "name": "Hibari for Kitsu.io",
-  "short_name": "Hibari",
+  "name": "yannic.world",
+  "short_name": "yannic.world",
+  "description": "Hello world",
   "start_url": ".",
   "lang": "en",
   "url": ".",
   "display": "standalone",
-  "background_color": "#fff",
-  "theme_color": "#332532",
-  "description": "User, anime & manga stats for Kitsu.io",
   "orientation": "any",
-  "icons": [{
-    "src": "favicon-194x194.png",
-    "sizes": "192x192",
-    "type": "image/png"
-  }]
+  "background_color": "#fafafa",
+  "theme_color": "#1976d2"
 }
