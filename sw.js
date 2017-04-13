@@ -1,13 +1,13 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/js/vendor.fe7b6e2b29c7749b48a0.js",
-      "/js/app.ec34573e99d90de1709e.js",
-      "/js/manifest.52cb9a6a06371715b42d.js",
+      "/js/vendor.14f93ae780bb3a9043ae.js",
+      "/js/app.bc818c9205ca69abd885.js",
+      "/js/manifest.ba26e042a0b05bc96ded.js",
       "/css/app.41fda4eb0086efb2d48b29b278c229a9.css",
-      "/js/app.ec34573e99d90de1709e.js.gz",
+      "/js/app.bc818c9205ca69abd885.js.gz",
       "/css/app.41fda4eb0086efb2d48b29b278c229a9.css.gz",
-      "/js/vendor.fe7b6e2b29c7749b48a0.js.gz",
+      "/js/vendor.14f93ae780bb3a9043ae.js.gz",
       "/"
     ],
     "additional": [],
@@ -15,20 +15,20 @@ var __wpo = {
   },
   "externals": [],
   "hashesMap": {
-    "c82b0cc5b81ba6d5622684f3fc579fc2c7b592c8": "/js/vendor.fe7b6e2b29c7749b48a0.js",
-    "32d3a59bdd87ce143b197f51356d8a6df30ce7b5": "/js/app.ec34573e99d90de1709e.js",
-    "36802f2acf25a65234c028fe698b07cfa3d70cee": "/js/manifest.52cb9a6a06371715b42d.js",
+    "53c0be1de3ddd7bf23b09f0fc271d4154b4737d5": "/js/vendor.14f93ae780bb3a9043ae.js",
+    "22f5da2e0c0a189ac6bad338d13a67b81824a1c5": "/js/app.bc818c9205ca69abd885.js",
+    "2d8213f1bcbf50f2d94afd087134e9de8ef36da0": "/js/manifest.ba26e042a0b05bc96ded.js",
     "3ff0a35039c105eeee20f2674ac927463e44db05": "/css/app.41fda4eb0086efb2d48b29b278c229a9.css",
-    "858535ddcec5e6205c5f7013c63987573b18b1b3": "/js/app.ec34573e99d90de1709e.js.gz",
+    "41e744a410571138c35d104bf9e911c5eb0c3f5b": "/js/app.bc818c9205ca69abd885.js.gz",
     "e0c63896806a74ab412e65e68fb72bdc7660ba29": "/css/app.41fda4eb0086efb2d48b29b278c229a9.css.gz",
-    "848a4a0629673b2a29402ac257338710bfb83c7d": "/js/vendor.fe7b6e2b29c7749b48a0.js.gz",
-    "ef3dae481d724de6902a4961ca5a5ff11cfe2532": "/"
+    "f08e67592250cbcbb444e65dc5cfcd150884a604": "/js/vendor.14f93ae780bb3a9043ae.js.gz",
+    "d8dd4f8031099f0c35ccbc9ca65028b17f0efd8e": "/"
   },
   "strategy": "changed",
   "responseStrategy": "network-first",
-  "version": "4/13/2017, 6:29:23 PM",
+  "version": "4/13/2017, 6:29:31 PM",
   "name": "webpack-offline",
-  "pluginVersion": "4.6.2",
+  "pluginVersion": "4.7.0",
   "relativePaths": false
 };
 
@@ -146,6 +146,7 @@ function WebpackServiceWorker(params, helpers) {
 
   var allAssets = [].concat(assets.main, assets.additional, assets.optional);
   var navigateFallbackURL = params.navigateFallbackURL;
+  var navigateFallbackForRedirects = params.navigateFallbackForRedirects;
 
   self.addEventListener('install', function (event) {
     console.log('[SW]:', 'Install event');
@@ -397,10 +398,10 @@ function WebpackServiceWorker(params, helpers) {
     // * event.request -- original Request to perform fetch() if necessary
     var resource = undefined;
 
-    if (responseStrategy === "network-first") {
+    if (responseStrategy === 'network-first') {
       resource = networkFirstResponse(event, urlString, cacheUrl);
     }
-    // "cache-first"
+    // 'cache-first'
     // (responseStrategy has been validated before)
     else {
         resource = cacheFirstResponse(event, urlString, cacheUrl);
@@ -478,10 +479,10 @@ function WebpackServiceWorker(params, helpers) {
         return response;
       }
 
-      // throw to reach the code in the catch below
-      throw new Error("response is not ok");
+      // Throw to reach the code in the catch below
+      throw new Error('Response is not ok');
     })
-    // this needs to be in a catch() and not just in the then() above
+    // This needs to be in a catch() and not just in the then() above
     // cause if your network is down, the fetch() will throw
     ['catch'](function () {
       if (DEBUG) {
@@ -494,15 +495,18 @@ function WebpackServiceWorker(params, helpers) {
 
   function handleNavigateFallback(fetching) {
     return fetching['catch'](function () {}).then(function (response) {
-      if (!response || !response.ok) {
-        if (DEBUG) {
-          console.log('[SW]:', 'Loading navigation fallback [' + navigateFallbackURL + '] from cache');
-        }
+      var isOk = response && response.ok;
+      var isRedirect = response && response.type === 'opaqueredirect';
 
-        return cachesMatch(navigateFallbackURL, CACHE_NAME);
+      if (isOk || isRedirect && !navigateFallbackForRedirects) {
+        return response;
       }
 
-      return response;
+      if (DEBUG) {
+        console.log('[SW]:', 'Loading navigation fallback [' + navigateFallbackURL + '] from cache');
+      }
+
+      return cachesMatch(navigateFallbackURL, CACHE_NAME);
     });
   }
 
@@ -566,7 +570,7 @@ function WebpackServiceWorker(params, helpers) {
         request = applyCacheBust(request, bustValue);
       }
 
-      return fetch(request, requestInit);
+      return fetch(request, requestInit).then(fixRedirectedResponse);
     })).then(function (responses) {
       if (responses.some(function (response) {
         return !response.ok;
@@ -664,6 +668,19 @@ function WebpackServiceWorker(params, helpers) {
 function cachesMatch(request, cacheName) {
   return caches.match(request, {
     cacheName: cacheName
+  }).then(function (response) {
+    if (isNotRedirectedResponse()) {
+      return response;
+    }
+
+    // Fix already cached redirected responses
+    return fixRedirectedResponse(response).then(function (fixedResponse) {
+      return caches.open(cacheName).then(function (cache) {
+        return cache.put(request, fixedResponse);
+      }).then(function () {
+        return fixedResponse;
+      });
+    });
   })
   // Return void if error happened (cache not found)
   ['catch'](function () {});
@@ -703,6 +720,26 @@ function getClientsURLs() {
 
 function isNavigateRequest(request) {
   return request.mode === 'navigate' || request.headers.get('Upgrade-Insecure-Requests') || (request.headers.get('Accept') || '').indexOf('text/html') !== -1;
+}
+
+function isNotRedirectedResponse(response) {
+  return !response || !response.redirected || !response.ok || response.type === 'opaqueredirect';
+}
+
+// Based on https://github.com/GoogleChrome/sw-precache/pull/241/files#diff-3ee9060dc7a312c6a822cac63a8c630bR85
+function fixRedirectedResponse(response) {
+  if (isNotRedirectedResponse(response)) {
+    return Promise.resolve(response);
+  }
+
+  var body = 'body' in response ? Promise.resolve(response.body) : response.blob();
+
+  return body.then(function (data) {
+    return new Response(data, {
+      headers: response.headers,
+      status: response.status
+    });
+  });
 }
 
 function copyObject(original) {
