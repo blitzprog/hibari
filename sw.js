@@ -2,10 +2,10 @@ var __wpo = {
   "assets": {
     "main": [
       "/js/vendor.d9b199219f20e3ae54f1.js",
-      "/js/app.89d56145a541db2125dc.js",
-      "/js/manifest.82b12685596f4472c7c2.js",
+      "/js/app.9835e2ba715d3f387cb8.js",
+      "/js/manifest.46be1b9614a3993c5f49.js",
       "/css/app.7718f7df9e766efc0ebd0d5af0b73a65.css",
-      "/js/app.89d56145a541db2125dc.js.gz",
+      "/js/app.9835e2ba715d3f387cb8.js.gz",
       "/css/app.7718f7df9e766efc0ebd0d5af0b73a65.css.gz",
       "/js/vendor.d9b199219f20e3ae54f1.js.gz",
       "/"
@@ -16,17 +16,17 @@ var __wpo = {
   "externals": [],
   "hashesMap": {
     "3c219ddee4099741218032f6720e1fec6f10ac8c": "/js/vendor.d9b199219f20e3ae54f1.js",
-    "8a3d59574e7318d9282da2dc5f2086048aacc0cd": "/js/app.89d56145a541db2125dc.js",
-    "b5dcf06efb56869b8392774f7a8269ec00640223": "/js/manifest.82b12685596f4472c7c2.js",
+    "b3738906a99e814dcbd5310c1bc1186678fe488d": "/js/app.9835e2ba715d3f387cb8.js",
+    "c2c0fce11a475394093068e6ddd1adebe486bd98": "/js/manifest.46be1b9614a3993c5f49.js",
     "7a10c3a0891d4b6495ebb4a1bc8b0b62822d09ed": "/css/app.7718f7df9e766efc0ebd0d5af0b73a65.css",
-    "36bfaa4185202c2e66a3245d22d0dc44933cffaf": "/js/app.89d56145a541db2125dc.js.gz",
+    "6565b37a588940bcb8e89e41c03bba6920a9ba45": "/js/app.9835e2ba715d3f387cb8.js.gz",
     "8ecf761896d94be4ca7fcf669f2813b308c06909": "/css/app.7718f7df9e766efc0ebd0d5af0b73a65.css.gz",
     "cbe57ff02a35efc40459072a7c1897fe6693c583": "/js/vendor.d9b199219f20e3ae54f1.js.gz",
-    "a648be2fe65d823e341964d5abc375467a705a81": "/"
+    "8b9f2e507a220668d72f0da44e0312d3a1afa4ed": "/"
   },
   "strategy": "changed",
   "responseStrategy": "network-first",
-  "version": "4/20/2017, 3:17:49 PM",
+  "version": "4/20/2017, 3:36:33 PM",
   "name": "webpack-offline",
   "pluginVersion": "4.7.0",
   "relativePaths": false
