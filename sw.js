@@ -1,13 +1,11 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/js/vendor.e8452fe14e267bddaca9.js",
-      "/js/app.092dbaec459f091ae905.js",
-      "/js/manifest.b53f2b217c1cdc70de2f.js",
-      "/css/app.c3f9fa450a4348553cb52306beb86b8a.css",
-      "/js/app.092dbaec459f091ae905.js.gz",
-      "/css/app.c3f9fa450a4348553cb52306beb86b8a.css.gz",
-      "/js/vendor.e8452fe14e267bddaca9.js.gz",
+      "/js/vendor.7964ed7e063cd2858a78.js",
+      "/js/app.2401acb8a905fc4d180c.js",
+      "/js/manifest.7c1062cef7179b3510bd.js",
+      "/js/app.2401acb8a905fc4d180c.js.gz",
+      "/js/vendor.7964ed7e063cd2858a78.js.gz",
       "/"
     ],
     "additional": [],
@@ -15,18 +13,16 @@ var __wpo = {
   },
   "externals": [],
   "hashesMap": {
-    "8dc40f558a758b02a0d98065c1619f830e03836c": "/js/vendor.e8452fe14e267bddaca9.js",
-    "157b7bee8321bf0e0945fe9d41ae0106b7f6cc83": "/js/app.092dbaec459f091ae905.js",
-    "9e8159de335d6ad4a0cf4505a9982db2e0213e4c": "/js/manifest.b53f2b217c1cdc70de2f.js",
-    "1334cb7fdac918001d466227179fe6054f202b06": "/css/app.c3f9fa450a4348553cb52306beb86b8a.css",
-    "c9cab41a56591d777b2a96d8d8e0aa5323b20ac3": "/js/app.092dbaec459f091ae905.js.gz",
-    "33f648e23201e6357254dd50849f9816e94381e6": "/css/app.c3f9fa450a4348553cb52306beb86b8a.css.gz",
-    "b10d050669a5ee7a524ddff68a7e99aab458fae5": "/js/vendor.e8452fe14e267bddaca9.js.gz",
-    "4a57a42f6206fcfaf24db7e67bfbd744036f4881": "/"
+    "a3f323ca3a9e47678df342eced7673c5034ae15d": "/js/vendor.7964ed7e063cd2858a78.js",
+    "3af79744612fc807a96df08deec995898539e358": "/js/app.2401acb8a905fc4d180c.js",
+    "89b5a490408d79549e68b1d1fd1ba0a372d2b497": "/js/manifest.7c1062cef7179b3510bd.js",
+    "d2c18a1d248ec157284168acee4fe33b7538c2ce": "/js/app.2401acb8a905fc4d180c.js.gz",
+    "8cb4c7db9299c337e3b0391021e3d07325b7249a": "/js/vendor.7964ed7e063cd2858a78.js.gz",
+    "5e835b8fb3688463253f96b12d3605070910446b": "/"
   },
   "strategy": "changed",
   "responseStrategy": "network-first",
-  "version": "4/24/2017, 7:55:38 AM",
+  "version": "4/26/2017, 12:27:59 PM",
   "name": "webpack-offline",
   "pluginVersion": "4.7.0",
   "relativePaths": false
