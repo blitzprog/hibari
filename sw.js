@@ -1,13 +1,13 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/js/vendor.019c75d089c2edbbedd5.js",
-      "/js/app.1f8e0aaaa82a82df9f96.js",
-      "/js/manifest.62f4248893556552f423.js",
+      "/js/vendor.7849b7a08248daa42840.js",
+      "/js/app.db9d269bc2b416266050.js",
+      "/js/manifest.e0aaa688cbe5a5156029.js",
       "/css/app.d940840c5d8da6e5fe457976b71c9963.css",
-      "/js/app.1f8e0aaaa82a82df9f96.js.gz",
+      "/js/app.db9d269bc2b416266050.js.gz",
       "/css/app.d940840c5d8da6e5fe457976b71c9963.css.gz",
-      "/js/vendor.019c75d089c2edbbedd5.js.gz",
+      "/js/vendor.7849b7a08248daa42840.js.gz",
       "/"
     ],
     "additional": [],
@@ -15,20 +15,20 @@ var __wpo = {
   },
   "externals": [],
   "hashesMap": {
-    "87826cbd12a4ae2fe48d220300e89b4d40784fd8": "/js/vendor.019c75d089c2edbbedd5.js",
-    "73ac96094daec84588db906d259962448c75e90d": "/js/app.1f8e0aaaa82a82df9f96.js",
-    "07a514dc920fd40976416cffd10b523c2369d8fc": "/js/manifest.62f4248893556552f423.js",
+    "44a19dc91ff7b27adb7312e942933956fb2be7be": "/js/vendor.7849b7a08248daa42840.js",
+    "454a0f91c42abfc9f5966e20d52d1ffaafa6ff3f": "/js/app.db9d269bc2b416266050.js",
+    "c7c4745407d512b66b7a134c1fcdf3672e0f5f05": "/js/manifest.e0aaa688cbe5a5156029.js",
     "ef913fd13990bf53e120a5128f0ee270bc4f88d2": "/css/app.d940840c5d8da6e5fe457976b71c9963.css",
-    "fa0bc469ceaffe9689fc3614584d5722bcb6868b": "/js/app.1f8e0aaaa82a82df9f96.js.gz",
+    "bf4b9bee1214aec2b7f9d38d004d8137c1a67196": "/js/app.db9d269bc2b416266050.js.gz",
     "dc753176bbeaf4b171a8a435219faaffc7574e4c": "/css/app.d940840c5d8da6e5fe457976b71c9963.css.gz",
-    "d74d1b4b86d873f0d9b9825ee8bb82010361ec64": "/js/vendor.019c75d089c2edbbedd5.js.gz",
-    "27215bf4d2b70eb3df446cc68eac7465d2570350": "/"
+    "16ab121bddabed1d79273175949ee73b466c5858": "/js/vendor.7849b7a08248daa42840.js.gz",
+    "6e5b650189ebb8e15c9aca73f2fbc7d790655bc9": "/"
   },
   "strategy": "changed",
   "responseStrategy": "network-first",
-  "version": "5/18/2017, 4:12:12 PM",
+  "version": "5/18/2017, 8:18:22 PM",
   "name": "webpack-offline",
-  "pluginVersion": "4.7.0",
+  "pluginVersion": "4.8.0",
   "relativePaths": false
 };
 
@@ -112,7 +112,48 @@ var __wpo = {
 
 "use strict";
 
-      
+
+(function () {
+  var waitUntil = ExtendableEvent.prototype.waitUntil;
+  var respondWith = FetchEvent.prototype.respondWith;
+  var promisesMap = new WeakMap();
+
+  ExtendableEvent.prototype.waitUntil = function (promise) {
+    var extendableEvent = this;
+    var promises = promisesMap.get(extendableEvent);
+
+    if (promises) {
+      promises.push(Promise.resolve(promise));
+      return;
+    }
+
+    promises = [Promise.resolve(promise)];
+    promisesMap.set(extendableEvent, promises);
+
+    // call original method
+    return waitUntil.call(extendableEvent, Promise.resolve().then(function processPromises() {
+      var len = promises.length;
+
+      // wait for all to settle
+      return Promise.all(promises.map(function (p) {
+        return p["catch"](function () {});
+      })).then(function () {
+        // have new items been added? If so, wait again
+        if (promises.length != len) return processPromises();
+        // we're done!
+        promisesMap["delete"](extendableEvent);
+        // reject if one of the promises rejected
+        return Promise.all(promises);
+      });
+    }));
+  };
+
+  FetchEvent.prototype.respondWith = function (promise) {
+    this.waitUntil(promise);
+    return respondWith.call(this, promise);
+  };
+})();;
+        'use strict';
 
 if (typeof DEBUG === 'undefined') {
   var DEBUG = false;
@@ -453,12 +494,13 @@ function WebpackServiceWorker(params, helpers) {
         if (cacheUrl === urlString) {
           (function () {
             var responseClone = response.clone();
-
-            caches.open(CACHE_NAME).then(function (cache) {
+            var storing = caches.open(CACHE_NAME).then(function (cache) {
               return cache.put(urlString, responseClone);
             }).then(function () {
               console.log('[SW]:', 'Cache asset: ' + urlString);
             });
+
+            event.waitUntil(storing);
           })();
         }
 
@@ -758,12 +800,12 @@ function logGroup(title, assets) {
 
   console.groupEnd();
 }
-      WebpackServiceWorker(__wpo, {
+        WebpackServiceWorker(__wpo, {
 loaders: {},
 cacheMaps: [],
 });
-      module.exports = __webpack_require__(0)
-    
+        module.exports = __webpack_require__(0)
+      
 
 /***/ })
 /******/ ]);
